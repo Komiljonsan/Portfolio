@@ -410,7 +410,11 @@ nav .fa-solid {
     font-size: 25px;
   }
   nav ul {
-    background: var(--blue);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(41, 216, 255, 0.1);
+    backdrop-filter: blur(3.2px);
+    -webkit-backdrop-filter: blur(3.2px);
+    border: 1px solid rgba(93, 212, 255, 0.3);
     position: fixed;
     top: 0;
     right: -200px;
