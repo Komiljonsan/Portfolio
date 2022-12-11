@@ -1,3 +1,5 @@
+const { Typed } = require("./typed");
+
 const tablinks = document.getElementsByClassName("tab-links");
 const tabcontents = document.getElementsByClassName("tab-contents");
       
@@ -11,6 +13,9 @@ function opentab(tabname) {
      event.currentTarget.classList.add("active-link");
      document.getElementById(tabname).classList.add("active-tab");
 }
+
+
+// -------------------sideMenu----------------
 
 const sidemenu = document.getElementById("sidemenu");
 
@@ -62,3 +67,39 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+// ---------------------switchLanguage-------------------
+
+const select = document.querySelector('select');
+const allLang = ['en', 'jp'];
+
+select.addEventListener('change', changeURLLanguage);
+
+// перенаправить на url с указанием языка
+function changeURLLanguage() {
+    let lang = select.value;
+    location.href = window.location.pathname + '#' + lang;
+    location.reload();
+}
+
+function changeLanguage() {
+    let hash = window.location.hash;
+    hash = hash.substr(1);
+    console.log(hash);
+    if (!allLang.includes(hash)) {
+        location.href = window.location.pathname + '#en';
+        location.reload();
+    }
+    select.value = hash;
+    // document.querySelector('title').innerHTML = langArr['unit'][hash];
+    // document.querySelector('.lng-chip').innerHTML = langArr['chip'][hash];
+    for (let key in langArr) {
+        let elem = document.querySelector('.lng-' + key);
+        if (elem) {
+            elem.innerHTML = langArr[key][hash];
+        }
+    }
+}
+
+changeLanguage();

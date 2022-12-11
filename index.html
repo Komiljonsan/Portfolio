@@ -23,16 +23,20 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contacts</a></li>
+            <li>
+              <select class="change-lang">
+                <option value="jp">JP</option>
+                <option value="en" selected>EN</option>
+              </select>
+            </li>
             <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
           </ul>
           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-          <p>Web Developer</p>
-          <h1>
-            Hi, I'm <span>Komiljon</span><br />
-            From Uzbekistan
-          </h1>
+          <h1>Hi, I'm <span>Komiljon</span><br /></h1>
+          <span class="tech"></span><br />
+          <h1>From Uzbekistan</h1>
         </div>
       </div>
     </div>
@@ -235,6 +239,8 @@
         <p>Copyright © Komiljon</p>
       </div>
     </div>
+    <script src="./lang.js"></script>
+    <script src="./typed.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
